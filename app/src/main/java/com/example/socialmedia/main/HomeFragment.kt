@@ -40,10 +40,7 @@ class HomeFragment : Fragment() {
         binding.username.setText(firebaseAuth.currentUser?.displayName)
        binding.email.setText(firebaseAuth.currentUser?.email)
 
-        binding.profilebutton.setOnClickListener {
 
-            findNavController().navigate(R.id.action_homeFragment_to_profileFragment2)
-        }
 
     }
 }

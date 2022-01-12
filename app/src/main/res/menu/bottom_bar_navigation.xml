@@ -3,7 +3,7 @@
 
     <item
         android:title="Home"
-        android:id="@+id/navigation_home"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_outline_home_24"
         />
 
@@ -15,7 +15,7 @@
 
     <item
         android:title="Profile"
-        android:id="@+id/navigation_profile"
+        android:id="@+id/profileFragment2"
         android:icon="@drawable/ic_outline_person_24"
     />
 </menu>

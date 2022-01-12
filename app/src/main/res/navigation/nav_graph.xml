@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_homeFragment_to_singeUpFragment2"
             app:destination="@id/singeUpFragment2" />
-        <action
-            android:id="@+id/action_homeFragment_to_profileFragment2"
-            app:destination="@id/profileFragment2" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
