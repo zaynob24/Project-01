@@ -40,7 +40,7 @@ class ProfileFragment : Fragment() {
 
         binding.loginTV.setOnClickListener {
 
-            findNavController().navigate(R.id.action_profileFragment2_to_loginFragment)
+            findNavController().navigate(R.id.action_profileFragment_to_loginFragment)
         }
 
         //LogOut
@@ -64,8 +64,8 @@ class ProfileFragment : Fragment() {
 
         }?:run {
             // user are not logged in
-            binding.userNotLoginLayout.visibility = View.VISIBLE
-            binding.userInfoLayout.visibility = View.INVISIBLE
+            findNavController().navigate(R.id.action_profileFragment_to_loginFragment)
+
 
         }
 

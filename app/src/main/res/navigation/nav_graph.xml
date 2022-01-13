@@ -3,16 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
-
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.socialmedia.idintity.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_singeUpFragment"
+            app:destination="@id/singeUpFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.socialmedia.main.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_singeUpFragment2"
-            app:destination="@id/singeUpFragment2" />
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
         <action
             android:id="@+id/action_homeFragment_to_addPostsFragment"
             app:destination="@id/addPostsFragment" />
@@ -21,37 +34,27 @@
             app:destination="@id/commentFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.socialmedia.idintity.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_singeUpFragment2"
-            app:destination="@id/singeUpFragment2" />
-        <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/singeUpFragment2"
+        android:id="@+id/singeUpFragment"
         android:name="com.example.socialmedia.idintity.SingeUpFragment"
         android:label="fragment_singe_up"
         tools:layout="@layout/fragment_singe_up" >
         <action
-            android:id="@+id/action_singeUpFragment2_to_loginFragment"
+            android:id="@+id/action_singeUpFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_singeUpFragment2_to_homeFragment"
+            android:id="@+id/action_singeUpFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/profileFragment2"
+        android:id="@+id/profileFragment"
         android:name="com.example.socialmedia.idintity.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
-            android:id="@+id/action_profileFragment2_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/addPostsFragment"
@@ -59,16 +62,12 @@
         android:label="fragment_add_posts"
         tools:layout="@layout/fragment_add_posts" />
     <fragment
-        android:id="@+id/messagesFragment"
-        android:name="com.example.socialmedia.main.MessagesFragment"
-        android:label="MessagesFragment" />
-    <fragment
         android:id="@+id/commentFragment"
         android:name="com.example.socialmedia.main.CommentFragment"
         android:label="fragment_comment"
-        tools:layout="@layout/fragment_comment">
-        <argument
-            android:name="postId"
-            app:argType="string" />
-    </fragment>
+        tools:layout="@layout/fragment_comment" />
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.example.socialmedia.main.MessagesFragment"
+        android:label="MessagesFragment" />
 </navigation>

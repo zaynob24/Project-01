@@ -103,7 +103,7 @@ class PostsAdapter(val context: Context, val homeViewModel: HomeViewModel) :
                 .with(context)
                 .load(post.imageUrl)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .skipMemoryCache(true)
+                .skipMemoryCache(true) // to stop Cache so when add new post the list updated
                 .placeholder(R.drawable.square_shape)
                 .into(binding.postImageView)
 
