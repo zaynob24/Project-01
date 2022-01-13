@@ -2,6 +2,7 @@ package com.example.socialmedia.repositories
 
 import android.net.Uri
 import android.util.Log
+import com.example.socialmedia.model.Comment
 import com.example.socialmedia.model.Posts
 import com.example.socialmedia.model.Users
 import com.google.android.gms.tasks.Task
@@ -52,8 +53,11 @@ class FirebaseServiceRepository {
 
 
     // retrieve comments
-    suspend fun retrieveComments(postId: String) = postInfoCollection.document(postId).collection(
+    suspend fun retrieveComments(postId: String) = db.collection(POSTS).document(postId).collection(
         COMMENTS).get().await()
+
+    fun uploadNewComment(postId: String,comment: Comment) = db.collection(POSTS).document(postId).collection(
+        COMMENTS).document().set(comment)
 
     //-------------------------------------------------------------------------------------------------------//
 

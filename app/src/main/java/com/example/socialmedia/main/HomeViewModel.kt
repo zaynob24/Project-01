@@ -47,8 +47,9 @@ class HomeViewModel : ViewModel() {
                     val imageName = document.get("imageName").toString()
                     val userId = document.get("userId").toString()
                     val userName = document.get("userName").toString()
+                    val postId = document.get("postId").toString()
 
-                    postArrayList.add(Posts(postMassage,imageUrl,imageName,userId,userName))
+                    postArrayList.add(Posts(postMassage,imageUrl,imageName,userId,userName,postId))
                 }
 
                 //Log.d(TAG, itemArrayList.toString())
