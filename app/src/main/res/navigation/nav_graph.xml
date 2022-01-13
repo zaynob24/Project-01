@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_addPostsFragment"
             app:destination="@id/addPostsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_commentFragment"
+            app:destination="@id/commentFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -55,4 +58,9 @@
         android:name="com.example.socialmedia.main.AddPostsFragment"
         android:label="fragment_add_posts"
         tools:layout="@layout/fragment_add_posts" />
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="com.example.socialmedia.main.CommentFragment"
+        android:label="fragment_comment"
+        tools:layout="@layout/fragment_comment" />
 </navigation>

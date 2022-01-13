@@ -20,8 +20,6 @@ import com.example.socialmedia.dialogs.ImageDialogFragment
 import com.example.socialmedia.model.Posts
 import com.example.socialmedia.util.Permissions
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
 import com.zhihu.matisse.Matisse
 import com.zhihu.matisse.MimeType
 import com.zhihu.matisse.internal.entity.CaptureStrategy
@@ -108,7 +106,7 @@ class AddPostsFragment : Fragment() {
                     // pass time in millis to use it as filename of the image
                     // to be sure it is unique in fireStorage(Duplicated name with replace the old image instead of add new one!)
                     addPostsViewModel.uploadPostImage(it, System.currentTimeMillis().toString())
-                }?: addPostsViewModel.uploadItemInfo(Posts(postMasage,"",imageFileName,firebaseAuth.currentUser!!.uid))  // save post details (postMassage,image )to fireStore
+                }?: addPostsViewModel.uploadPostInfo(Posts(postMasage,"",imageFileName,firebaseAuth.currentUser!!.uid,firebaseAuth.currentUser!!.displayName!!))  // save post details (postMassage,image )to fireStore
 
 
             }else{
@@ -206,7 +204,7 @@ class AddPostsFragment : Fragment() {
                 addPostsViewModel.uploadImageLiveData.postValue(null)
 
                  // save post details (postMassage,image )to fireStore
-                addPostsViewModel.uploadItemInfo(Posts(postMasage,imageUrl,imageFileName,firebaseAuth.currentUser!!.uid))
+                addPostsViewModel.uploadPostInfo(Posts(postMasage,imageUrl,imageFileName,firebaseAuth.currentUser!!.uid,firebaseAuth.currentUser!!.displayName!!))
 
             }
         })

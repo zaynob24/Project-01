@@ -22,7 +22,7 @@ class AddPostsViewModel : ViewModel() {
     val uploadPostsLiveData = MutableLiveData<String>()
     val uploadItemPostsLiveData = MutableLiveData<String>()
 
-    fun uploadItemInfo(posts: Posts) {
+    fun uploadPostInfo(posts: Posts) {
 
         viewModelScope.launch(Dispatchers.IO) {
 

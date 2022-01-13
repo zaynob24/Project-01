@@ -6,6 +6,6 @@ data class Posts(
     val imageUrl: String = "",
     val imageName: String = "",
     val userId: String = "",
-    var documentId:String=""
+    var userName:String=""
 
 )

@@ -10,6 +10,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import kotlinx.coroutines.tasks.await
 
 private const val POSTS = "posts"
 
@@ -23,7 +24,7 @@ class FirebaseServiceRepository {
 
 
     // Collections
-    private val itemInfoCollection = db.collection(POSTS)
+    private val postInfoCollection = db.collection(POSTS)
 
 
     //-------------------------------------------------------------------------------------------------------//
@@ -38,14 +39,14 @@ class FirebaseServiceRepository {
 
 
     // upload post Info to fireStore
-    fun uploadPostInfo(posts: Posts)= itemInfoCollection.document().set(posts)
+    fun uploadPostInfo(posts: Posts)= postInfoCollection.document().set(posts)
 
     // Login
     fun login(email: String, password: String)= firebaseAuth.signInWithEmailAndPassword(email,password)
 
 
     // retrieve posts
-    //suspend fun  retrieveItems() =  itemInfoCollection.get().await()
+    suspend fun  retrievePosts() =  postInfoCollection.get().await()
 
 
     //-------------------------------------------------------------------------------------------------------//
