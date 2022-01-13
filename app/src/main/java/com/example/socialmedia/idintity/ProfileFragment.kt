@@ -35,7 +35,7 @@ class ProfileFragment : Fragment() {
         checkLoggedInState()
 
         binding.emailAdrresProfile.setText(firebaseAuth.currentUser?.email)
-        binding.phoneNumberProfile.setText(firebaseAuth.currentUser?.displayName)
+        binding.textView5.setText(firebaseAuth.currentUser?.displayName)
 
 
         binding.loginTV.setOnClickListener {

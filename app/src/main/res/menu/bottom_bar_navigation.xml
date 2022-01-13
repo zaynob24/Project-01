@@ -9,7 +9,7 @@
 
     <item
         android:title="Messages"
-        android:id="@+id/navigation_messages"
+        android:id="@+id/messagesFragment"
         android:icon="@drawable/ic_outline_message_24"
         />
 

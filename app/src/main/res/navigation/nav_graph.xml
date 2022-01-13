@@ -59,6 +59,10 @@
         android:label="fragment_add_posts"
         tools:layout="@layout/fragment_add_posts" />
     <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.example.socialmedia.main.MessagesFragment"
+        android:label="MessagesFragment" />
+    <fragment
         android:id="@+id/commentFragment"
         android:name="com.example.socialmedia.main.CommentFragment"
         android:label="fragment_comment"
