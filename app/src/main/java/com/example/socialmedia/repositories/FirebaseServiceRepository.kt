@@ -11,18 +11,7 @@ import com.google.firebase.firestore.SetOptions
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 
-private const val USER= "users"
-const val SHARED_PREF_FILE = "Auth"
-const val USER_ID = "userId"
-const val USER_EMAIL = "userEmail"
-const val USER_PHONE = "userPhone"
-const val USER_NAME = "userFullName"
-const val IMAGE_NAME = "imageName"
-
-const val EMAIL = "email"
-
-private const val ITEM = "items"
-private const val REQUESTS = "requests"
+private const val POSTS = "posts"
 
 private const val TAG = "FirebaseServiceReposito"
 class FirebaseServiceRepository {
@@ -34,8 +23,7 @@ class FirebaseServiceRepository {
 
 
     // Collections
-    private val userCollection = db.collection(USER)
-    private val itemInfoCollection = db.collection(ITEM)
+    private val itemInfoCollection = db.collection(POSTS)
 
 
     //-------------------------------------------------------------------------------------------------------//
@@ -45,18 +33,18 @@ class FirebaseServiceRepository {
     fun signUp(email: String, password: String) = firebaseAuth.createUserWithEmailAndPassword(email, password)
 
 
-    // upload Item Image to fireStorage
-    fun uploadItemImage(imageUri: Uri, filename:String)= imageRef.child("images/$filename").putFile(imageUri)
+    // upload post Image to fireStorage
+    fun uploadPostImage(imageUri: Uri, filename:String)= imageRef.child("images/$filename").putFile(imageUri)
 
 
-    // upload Item Info to fireStore
-    fun uploadItemInfo(posts: Posts)= itemInfoCollection.document().set(posts)
+    // upload post Info to fireStore
+    fun uploadPostInfo(posts: Posts)= itemInfoCollection.document().set(posts)
 
     // Login
     fun login(email: String, password: String)= firebaseAuth.signInWithEmailAndPassword(email,password)
 
 
-    // retrieve Items
+    // retrieve posts
     //suspend fun  retrieveItems() =  itemInfoCollection.get().await()
 
 

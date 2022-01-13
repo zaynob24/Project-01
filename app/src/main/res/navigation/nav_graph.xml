@@ -14,8 +14,8 @@
             android:id="@+id/action_homeFragment_to_singeUpFragment2"
             app:destination="@id/singeUpFragment2" />
         <action
-            android:id="@+id/action_homeFragment_to_profileFragment2"
-            app:destination="@id/profileFragment2" />
+            android:id="@+id/action_homeFragment_to_addPostsFragment"
+            app:destination="@id/addPostsFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -50,4 +50,9 @@
             android:id="@+id/action_profileFragment2_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addPostsFragment"
+        android:name="com.example.socialmedia.main.AddPostsFragment"
+        android:label="fragment_add_posts"
+        tools:layout="@layout/fragment_add_posts" />
 </navigation>

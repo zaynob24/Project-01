@@ -35,14 +35,7 @@ class HomeFragment : Fragment() {
 
         binding.floatingActionButton.setOnClickListener {
 
-            findNavController().navigate(R.id.action_homeFragment_to_singeUpFragment2)
-        }
-        binding.username.setText(firebaseAuth.currentUser?.displayName)
-       binding.email.setText(firebaseAuth.currentUser?.email)
-
-        binding.profilebutton.setOnClickListener {
-
-            findNavController().navigate(R.id.action_homeFragment_to_profileFragment2)
+            findNavController().navigate(R.id.action_homeFragment_to_addPostsFragment)
         }
 
     }

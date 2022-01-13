@@ -32,4 +32,13 @@
 
     <string name="Logout">Logout</string>
 
+    <!--  Add Posts -->
+    <string name="new_post_hint"> What are you thinking about?</string>
+    <string name="post_published_successfully">"Post published successfully"</string>
+
+
+    <!-- Error massage -->
+    <string name="required">Required</string>
+    <string name="fill_required">please fill required</string>
+
 </resources>
