@@ -66,5 +66,9 @@
         android:id="@+id/commentFragment"
         android:name="com.example.socialmedia.main.CommentFragment"
         android:label="fragment_comment"
-        tools:layout="@layout/fragment_comment" />
+        tools:layout="@layout/fragment_comment">
+        <argument
+            android:name="postId"
+            app:argType="string" />
+    </fragment>
 </navigation>

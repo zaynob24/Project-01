@@ -1,6 +1,7 @@
 package com.example.socialmedia.adapters
 
 import android.content.Context
+import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -15,6 +16,8 @@ import com.example.socialmedia.R
 import com.example.socialmedia.databinding.TimelineLayoutBinding
 import com.example.socialmedia.main.HomeViewModel
 import com.example.socialmedia.model.Posts
+
+const val POST_ID_KEY = "postID"
 
 private const val TAG = "PostsAdapter"
 // context to use it with Glide , homeViewModel to use it for pass item selected
@@ -63,7 +66,10 @@ class PostsAdapter(val context: Context, val homeViewModel: HomeViewModel) :
 
         holder.itemView.setOnClickListener {
             homeViewModel.selectedPostsLiveData.postValue(post)
-            holder.itemView.findNavController().navigate(R.id.action_homeFragment_to_commentFragment)
+
+            val args = Bundle()
+            args.putString(POST_ID_KEY, post.postId)
+            holder.itemView.findNavController().navigate(R.id.action_homeFragment_to_commentFragment, args)
 
         }
 
