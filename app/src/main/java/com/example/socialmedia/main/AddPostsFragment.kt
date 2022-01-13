@@ -199,7 +199,8 @@ class AddPostsFragment : Fragment() {
             it?.let {
 
                 imageFileName = it //name of image in fireStorage (the name is: currentTimeMillis)
-                val imageUrl = "https://firebasestorage.googleapis.com/v0/b/moqaida-z.appspot.com/o/images%2F$imageFileName?alt=media&token=c1cbbd99-21e8-4887-b309-2388412dea6f"
+
+                val imageUrl = "https://firebasestorage.googleapis.com/v0/b/socialmedia-b66ed.appspot.com/o/images%2F$imageFileName?alt=media&token=167a9a01-1c56-4e64-a74d-b937eac2a495"
 
                 addPostsViewModel.uploadImageLiveData.postValue(null)
 

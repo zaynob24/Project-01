@@ -38,11 +38,11 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
 
-                R.id.action_profileFragment2_to_loginFragment -> {
+                R.id.action_profileFragment_to_loginFragment -> {
                     // bottomNavView.visibility = View.GONE
                     bottomNavView.visibility = View.GONE
                 }
-                R.id.singeUpFragment2 -> {
+                R.id.singeUpFragment -> {
                     //   bottomNavView.visibility = View.GONE
                     bottomNavView.visibility = View.GONE
                 }
