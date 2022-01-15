@@ -68,6 +68,14 @@ class PostsAdapter(val context: Context, val homeViewModel: HomeViewModel) :
 
         val post = differ.currentList[position]
 
+        holder.itemView.setOnClickListener{
+            homeViewModel.selectedPostsLiveData.postValue(post)
+
+            val args = Bundle()
+            args.putString(POST_ID_KEY, post.postId)
+            holder.itemView.findNavController().navigate(R.id.action_homeFragment_to_commentFragment, args)
+        }
+
         holder.binding.commentsIcon.setOnClickListener{
             homeViewModel.selectedPostsLiveData.postValue(post)
 

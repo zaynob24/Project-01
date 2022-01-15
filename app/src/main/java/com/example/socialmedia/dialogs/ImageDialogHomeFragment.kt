@@ -3,6 +3,7 @@ package com.example.socialmedia.dialogs
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +12,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.socialmedia.R
 import com.example.socialmedia.databinding.FragmentImageDialogBinding
+import com.squareup.picasso.Picasso
 
-
+private const val TAG = "ImageDialogHomeFragment"
 class ImageDialogHomeFragment(val imageUri: String) : DialogFragment() {
 
     private lateinit var binding: FragmentImageDialogBinding
@@ -28,17 +30,10 @@ class ImageDialogHomeFragment(val imageUri: String) : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+           Log.d(TAG,imageUri)
 
-        getContext()?.let {
-            Glide
-                .with(it)
-                .load(imageUri)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .skipMemoryCache(true) // to stop Cache so when add new post the list updated
-                .placeholder(R.drawable.square_shape)
-                .into(binding.fullScrrenImageDialog)
-        }
 
+        Picasso.get().load(imageUri).into(binding.fullScrrenImageDialog);
 
 
         binding.closeImageIcon.setOnClickListener {
@@ -48,7 +43,9 @@ class ImageDialogHomeFragment(val imageUri: String) : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        // val width = (resources.displayMetrics.widthPixels * 0.85).toInt()
-        dialog!!.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+         val width = (resources.displayMetrics.widthPixels * 0.85).toInt()
+         val high = (resources.displayMetrics.widthPixels * 0.85).toInt()
+
+        dialog!!.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
 }
