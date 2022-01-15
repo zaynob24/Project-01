@@ -7,11 +7,6 @@
         android:icon="@drawable/ic_outline_home_24"
         />
 
-    <item
-        android:title="Messages"
-        android:id="@+id/messagesFragment"
-        android:icon="@drawable/ic_outline_message_24"
-        />
 
     <item
         android:title="Profile"

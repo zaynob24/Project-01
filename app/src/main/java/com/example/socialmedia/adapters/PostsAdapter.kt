@@ -1,5 +1,6 @@
 package com.example.socialmedia.adapters
 
+
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -12,8 +13,11 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.example.socialmedia.MainActivity
 import com.example.socialmedia.R
 import com.example.socialmedia.databinding.TimelineLayoutBinding
+import com.example.socialmedia.dialogs.ImageDialogFragment
+import com.example.socialmedia.dialogs.ImageDialogHomeFragment
 import com.example.socialmedia.main.HomeViewModel
 import com.example.socialmedia.model.Posts
 
@@ -64,12 +68,21 @@ class PostsAdapter(val context: Context, val homeViewModel: HomeViewModel) :
 
         val post = differ.currentList[position]
 
-        holder.itemView.setOnClickListener {
+        holder.binding.commentsIcon.setOnClickListener{
             homeViewModel.selectedPostsLiveData.postValue(post)
 
             val args = Bundle()
             args.putString(POST_ID_KEY, post.postId)
             holder.itemView.findNavController().navigate(R.id.action_homeFragment_to_commentFragment, args)
+        }
+
+        holder.binding.postImageView.setOnClickListener {
+            val activity = context as? MainActivity
+
+                ImageDialogHomeFragment(post.imageUrl).show(
+                    activity!!.supportFragmentManager,
+                    "DetailsDialogFragment"
+                )
 
         }
 

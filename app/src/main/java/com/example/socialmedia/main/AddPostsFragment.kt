@@ -82,6 +82,11 @@ class AddPostsFragment : Fragment() {
             showImagePicker()     // this function showing ImagePicker using Matisse library then give imageUri of chosen image
         }
 
+        // cancel adding post
+//        binding.cancelAddPostIcon.setOnClickListener {
+//            activity?.supportFragmentManager?.popBackStack()
+//        }
+
         //cancel chosen image
         binding.cancelImageIcon.setOnClickListener {
 
