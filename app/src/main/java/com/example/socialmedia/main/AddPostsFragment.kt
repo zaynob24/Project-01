@@ -104,7 +104,7 @@ class AddPostsFragment : Fragment() {
                 imageUri?.let {
                     progressDialog.show()
                     // pass time in millis to use it as filename of the image
-                    // to be sure it is unique in fireStorage(Duplicated name with replace the old image instead of add new one!)
+                    // to be sure it is unique in fireStorage(Duplicated name will replace the old image instead of add new one!)
                     addPostsViewModel.uploadPostImage(it, System.currentTimeMillis().toString())
                 }?: addPostsViewModel.uploadPostInfo(Posts(postMasage,"",imageFileName,firebaseAuth.currentUser!!.uid,firebaseAuth.currentUser!!.displayName!!))  // save post details (postMassage,image )to fireStore
 

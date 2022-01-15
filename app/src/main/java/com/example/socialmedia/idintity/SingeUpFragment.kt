@@ -81,8 +81,6 @@ class SingeUpFragment : Fragment() {
 
         }
 
-
-
     }
 
 
